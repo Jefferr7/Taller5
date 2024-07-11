@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuarios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/validations.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="registro.html">Registro</a></li>
+                <li><a href="jquery.html">jQuery</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form id="registroForm">
+            <h1>Registro de Usuario</h1>
+            <p>Completa los siguientes campos para crear tu cuenta.</p>
+
+            <div class="form-group">
+                <div>
+                    <label for="nombres">Nombres:</label>
+                    <input type="text" id="nombres" name="nombres" required>
+                </div>
+                <div>
+                    <label for="apellidos">Apellidos:</label>
+                    <input type="text" id="apellidos" name="apellidos" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required onchange="calculateAge(this.value)">
+                </div>
+                <div>
+                    <label for="edad">Edad:</label>
+                    <input type="text" id="edad" name="edad" readonly>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div>
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="contrasena">Contraseña:</label>
+                    <input type="password" id="contrasena" name="contrasena" required>
+                </div>
+                <div>
+                    <label for="confirmarContrasena">Confirmar Contraseña:</label>
+                    <input type="password" id="confirmarContrasena" name="confirmarContrasena" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <label for="enfermedades">¿Ha sufrido de enfermedades?</label>
+                    <select id="enfermedades" name="enfermedades" required>
+                        <option value="no">No</option>
+                        <option value="si">Sí</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="detalleEnfermedades" style="display: none;">
+                <div class="form-group">
+                    <div>
+                        <label for="tipoEnfermedad">Enfermedades contagiosas:</label>
+                        <input type="text" id="tipoEnfermedad" name="tipoEnfermedad">
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Registrarse</button>
+            <button type="reset">Restablecer</button>
+        </form>
+    </main>
+</body>
+</html>
